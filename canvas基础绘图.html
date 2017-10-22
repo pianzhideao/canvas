@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+</head>
+<body style="background: black;">
+	<canvas id="canvas" width="1200" height="600" style="display:block;margin:50px auto;border:1px solid #ccc;">
+		您的浏览器不支持canvas！！！
+	</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var context=canvas.getContext("2d");
+
+		context.lineWidth=1;
+		context.strokeStyle="#ff0000";
+		for(var i=0;i<10;i++){
+			context.beginPath();
+			context.arc(10+i*100,60,40,0,2*Math.PI*(i+1)/10);//默认顺时针
+			context.closePath();//对fill()函数无用
+
+			context.stroke();
+		}
+
+		context.fillStyle="#ff0000";
+		for(var i=0;i<10;i++){
+			context.beginPath();
+			context.arc(10+i*100,180,40,0,2*Math.PI*(i+1)/10);//默认顺时针
+			context.fill();
+			context.stroke();
+		}
+		
+
+		// context.beginPath();
+		// context.moveTo(100,100);
+		// context.lineTo(500,500);
+		// context.lineTo(100,500);
+		// context.lineTo(100,100);
+		// context.lineWidth=5;
+		// context.strokeStyle="#ff0000"
+
+		// context.stroke();//给所要绘制的图形绘制直线（描边）
+		
+		// context.fillStyle="rgb(2,100,30)";//给所要绘制的图形着色
+		// context.fill();
+		// context.closePath();
+
+		// context.beginPath();
+		// context.moveTo(100,200);
+		// context.lineTo(500,600);
+		// context.lineTo(100,600);
+		// context.lineTo(100,200);
+		// context.lineWidth=5;
+		// context.strokeStyle="rgb(2,100,30)"
+
+		// context.stroke();//给所要绘制的图形绘制直线（描边）
+		// context.fillStyle="#ff0000";//给所要绘制的图形着色
+		// context.fill();
+		// context.closePath();
+
+	</script>
+</body>
+</html>
